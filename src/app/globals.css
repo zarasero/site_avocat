@@ -2,25 +2,90 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #0f1f3d;
+  --navy-50: #f4f6fa;
+  --navy-100: #e8ecf4;
+  --navy-200: #c5cfe3;
+  --navy-300: #9aaac8;
+  --navy-400: #6b7fa8;
+  --navy-500: #4a5f87;
+  --navy-600: #354a6e;
+  --navy-700: #243556;
+  --navy-800: #162440;
+  --navy-900: #0f1f3d;
+  --navy-950: #0a1428;
+  --gold-400: #d4b87a;
+  --gold-500: #c9a962;
+  --gold-600: #b8944d;
+  --cream: #f8f7f4;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-navy-50: var(--navy-50);
+  --color-navy-100: var(--navy-100);
+  --color-navy-200: var(--navy-200);
+  --color-navy-300: var(--navy-300);
+  --color-navy-400: var(--navy-400);
+  --color-navy-500: var(--navy-500);
+  --color-navy-600: var(--navy-600);
+  --color-navy-700: var(--navy-700);
+  --color-navy-800: var(--navy-800);
+  --color-navy-900: var(--navy-900);
+  --color-navy-950: var(--navy-950);
+  --color-gold-400: var(--gold-400);
+  --color-gold-500: var(--gold-500);
+  --color-gold-600: var(--gold-600);
+  --color-cream: var(--cream);
+  --font-sans: var(--font-dm-sans);
+  --font-serif: var(--font-cormorant);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-dm-sans), system-ui, sans-serif;
+}
+
+.font-serif {
+  font-family: var(--font-cormorant), Georgia, serif;
+}
+
+@layer components {
+  .section-title {
+    @apply font-serif text-2xl text-navy-900 md:text-3xl;
+  }
+
+  .section-accent {
+    @apply mt-3 h-px w-16 bg-gold-500;
+  }
+
+  .contact-panel {
+    @apply overflow-hidden rounded-sm bg-navy-900 shadow-2xl ring-1 ring-gold-500/25;
+  }
+
+  .contact-detail {
+    @apply flex gap-4 rounded-sm border border-navy-700/80 bg-navy-800/50 p-4 transition hover:border-gold-500/40 hover:bg-navy-800;
+  }
+
+  .contact-icon-wrap {
+    @apply flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-gold-500/10 text-gold-400 ring-1 ring-gold-500/30;
+  }
+
+  .btn-action-save {
+    @apply inline-flex flex-col items-center justify-center gap-2 rounded-sm bg-gold-500 px-4 py-5 text-center text-sm font-semibold text-navy-950 shadow-md transition hover:bg-gold-400 focus:outline-none focus:ring-2 focus:ring-gold-400 focus:ring-offset-2 focus:ring-offset-navy-900;
+  }
+
+  .btn-action-call {
+    @apply inline-flex flex-col items-center justify-center gap-2 rounded-sm border border-navy-600 bg-navy-800 px-4 py-5 text-center text-sm font-semibold text-white transition hover:border-gold-500/50 hover:bg-navy-700 focus:outline-none focus:ring-2 focus:ring-gold-500 focus:ring-offset-2 focus:ring-offset-navy-900;
+  }
+
+  .btn-action-email {
+    @apply inline-flex flex-col items-center justify-center gap-2 rounded-sm border border-gold-500/50 bg-transparent px-4 py-5 text-center text-sm font-semibold text-gold-400 transition hover:bg-gold-500/10 focus:outline-none focus:ring-2 focus:ring-gold-500 focus:ring-offset-2 focus:ring-offset-navy-900;
+  }
+
+  .legal-aid-box {
+    @apply mt-10 border border-gold-500/30 bg-navy-900 px-6 py-6 shadow-lg;
+  }
 }
