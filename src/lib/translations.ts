@@ -14,7 +14,7 @@ const t = {
       contact: "Contact",
     },
     hero: {
-      subtitle: "Avocat — Nice",
+      subtitle: "Avocat — Nice, France",
     },
     introduction: `Maître Arnaud GOSSA accompagne ses clients en droit administratif (urbanisme, responsabilité de la puissance publique, recours contre les décisions préfectorales, fonction publique, etc.), en droit civil (réparation du préjudice corporel, responsabilité civile, droit de la famille, droit immobilier, procédure d'adoption, etc.), ainsi qu'en droit pénal.`,
     legalAid: `Le Cabinet intervient également au titre de l'aide juridictionnelle, conformément aux conditions légales d'éligibilité.`,
