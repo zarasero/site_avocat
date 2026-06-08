@@ -114,11 +114,13 @@ export function ContactDetails({ phoneLabel, emailLabel }: ContactDetailsProps) 
         <div className="contact-icon-wrap">
           <EmailIcon />
         </div>
-        <div className="min-w-0">
+        <div className="min-w-0 flex-1">
           <p className="text-xs font-semibold uppercase tracking-wider text-gold-400">
             {emailLabel}
           </p>
-          <p className="truncate text-lg font-medium text-white">{site.email}</p>
+          <p className="break-all text-base font-medium text-white sm:text-lg">
+            {site.email}
+          </p>
         </div>
       </div>
     </div>
